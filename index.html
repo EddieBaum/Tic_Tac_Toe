@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://eddiebaum.github.io/Tic_Tac_Toe/tttStyle.css"></link>
+    <script src="https://eddiebaum.github.io/Tic_Tac_Toe/app.js" defer></script> <!-- https://eddiebaum.github.io/Tic_Tac_Toe/app.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+    <title>Tic Tac Toe</title>
+</head>
+<body>
+
+    <h1 class="ml10">
+        <span class="text-wrapper">
+          <span class="letters header">Tic-Tac-Toe</span>
+        </span>
+    </h1>
+      
+
+    <div class="board-and-coinflip-div">
+
+        <div class="coinFlipContainer">
+            <h2>Choose Heads or Tails?</h2>
+            <div class='coinFlipButtonsDiv'>
+                <button id="heads" class="headsTailsButton"></button>
+                <button id="tails" class="headsTailsButton"></button>
+            </div>
+            <div id="coinFlipWinnerDisplay"></div>
+        </div>
+
+        <div class="board" id="board">
+            <div class="cell" id="cell-0" data-cell="0"></div>
+            <div class="cell" id="cell-1" data-cell="1"></div>
+            <div class="cell" id="cell-2" data-cell="2"></div>
+            <div class="cell" id="cell-3" data-cell="3"></div>
+            <div class="cell" id="cell-4" data-cell="4"></div>
+            <div class="cell" id="cell-5" data-cell="5"></div>
+            <div class="cell" id="cell-6" data-cell="6"></div>
+            <div class="cell" id="cell-7" data-cell="7"></div>
+            <div class="cell" id="cell-9" data-cell="8"></div>
+        </div>
+
+
+
+    </div>
+
+    <div class="winning-message" id="winningMessage">
+        <div data-winning-message-text></div>
+        <span id="winDisplayMessage"></span>
+        <button id="restartButton">RESTART</button>
+    </div>
+
+
+</body>
+</html>

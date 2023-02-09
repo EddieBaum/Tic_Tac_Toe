@@ -1,0 +1,288 @@
+/* Potenial Color Scheme */
+/* #0b7bea (blue) #7aea0a (green) #ea0a7a (red) */
+
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap');
+/* font-family: 'Shadows Into Light', cursive; */
+
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+/* font-family: 'Righteous', cursive; */
+
+
+
+
+*, *::after, *::before {
+    box-sizing: border-box;
+}
+
+:root {                             /* Variable */
+    --cell-size: 100px; 
+    --mark-size: calc(var(--cell-size) * .9);
+}
+
+/* {
+    border: 1px solid orange;
+}*/
+
+body {
+    margin: 0;
+    background-color: #24134d;
+    color: white;
+}
+
+h1 {
+    text-align: center;
+    letter-spacing: 5px;
+}
+
+.header {
+    border: 1px solid #a38ae2;
+    padding: 0px 30px;
+    font-family: 'Righteous', cursive;
+    font-size: 1.7em;
+    margin: 0 auto;
+}
+
+.ml10 {                             /* Moving letters 'Tic Tac Toe' */
+    position: relative;
+    font-weight: 900;
+    font-size: 4em;
+  }
+  
+  .ml10 .text-wrapper {
+    position: relative;
+    display: inline-block;
+    padding-top: 0.2em;
+    padding-right: 0.05em;
+    padding-bottom: 0.1em;
+    overflow: hidden;
+  }
+  
+  .ml10 .letter {
+    display: inline-block;
+    line-height: 1em;
+    transform-origin: 0 0;
+  }
+
+.board-and-coinflip-div {
+    display: flex; 
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.coinFlipContainer {                /* Choose heads or tails to start game */ 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    font-family: 'Righteous', cursive;
+    font-size: 1.4em;
+    margin-left: 80px;
+    border: 1px solid #a38ae2;
+}
+
+.coinFlipButtonsDiv {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+
+}
+
+.headsTailsButton {
+    width: 125px;
+    height: 125px;
+    border: none;
+    border-radius: 50%;
+    margin: 10px auto; 
+    font-size: 2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.headsTailsButton:hover {
+    border: 7px solid #ea0a7a; 
+}
+
+#heads {
+    background-image: url('file:///Users/edwardbaum/WebDevelopment/JS_games/Tic_Tac_Toe/Screenshot%202023-02-06%20at%202.12.40%20PM.png');
+    background-position: center;
+    background-size: 101%;
+    margin-left: 90px; 
+
+}
+
+#tails {
+    background-image: url('file:///Users/edwardbaum/WebDevelopment/JS_games/Tic_Tac_Toe/Screenshot%202023-02-06%20at%208.46.33%20AM.png');
+    background-position: center;
+    background-size: 119%;
+    margin-right: 90px;
+}
+
+#coinFlipWinnerDisplay {
+    background-color: #0b7bea;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    padding: 10px;
+    flex: 1; 
+    width: 100%;
+    opacity: 0;
+    transition: opacity .5s ease-in;
+}
+
+
+.board {
+    width: 50%; 
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3,auto);
+    justify-content: center;
+    align-content: center;
+    justify-items: center;
+    align-items: center;
+    padding: 15px;
+}
+
+.cell {
+    width: 100px; 
+    height: 100px;
+    border: 1px solid white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    cursor: pointer; 
+    font-size: 6.3em;
+    color:  #ea0a7a;
+    font-family: 'Shadows Into Light', cursive;
+}
+
+#winningMessage {
+    background: rgba(0,0,0, .6);
+    display: none;
+        justify-content: center;
+        align-items: center;   
+        flex-direction: column; 
+    position: fixed;
+    border: 2px solid #ea0a7a;
+    top: 10%;
+    bottom: 10%;
+    left: 10%;
+    right: 10%;
+}
+
+#winDisplayMessage {
+    color: #7aea0a;
+    font-size: 2.5em;
+    font-family: 'Righteous', cursive;
+    margin: 20px auto;
+}
+
+#restartButton {
+    height: 5em;
+    width: 8em;
+    border-radius: 4px;
+    border: 2px solid #7aea0a;
+    font-size: 1.5em;
+    background-color: black;
+    color: white
+}
+
+#restartButton:hover {
+    cursor: pointer;
+    color: white;   
+}
+
+
+.cell:first-child,
+.cell:nth-child(2), 
+.cell:nth-child(3) {
+    border-top: none;
+}
+
+.cell:first-child,
+.cell:nth-child(4),
+.cell:nth-child(7) {
+    border-left: none;
+}
+
+.cell:nth-child(3),
+.cell:nth-child(6),
+.cell:nth-child(9) {
+    border-right: none; 
+}
+
+.cell:nth-child(7),
+.cell:nth-child(8),
+.cell:nth-child(9) {
+    border-bottom: none;
+}
+
+@media only screen and (max-width: 900px) {
+    .header {
+        padding: 0px 15px;
+        font-size: .7em;
+        margin: 0 auto; 
+    }
+
+    h1 {
+        letter-spacing: 2px;
+    }
+
+    .board-and-coinflip-div {
+        flex-direction: column;
+    }
+
+    .headsTailsButton {
+        width: 90px;
+        height: 90px;
+        margin: 8px auto; 
+        font-size: 1.5em;
+        display: flex;
+    }
+
+    #heads {
+        margin-left: 10px; 
+    
+    }
+    
+    #tails {
+        margin-right: 10px;
+    }
+
+    .coinFlipContainer {          /* Choose heads or tails to start game */ 
+        font-size: .9em;
+        border: 1px solid #a38ae2;
+        margin: 20px auto;
+        padding: 12px; 
+    }
+
+    #coinFlipWinnerDisplay {
+        font-size: 1.2em;
+        padding: 5px;
+    }
+
+    .board {
+        flex: 1; 
+        display: grid;
+        padding: 0px;
+    }
+
+    #winningMessage {
+        top: 15%;
+        bottom: 15%;
+        left: 12%;
+        right: 12%;
+    }
+
+}
+
+
+
+
+
+
