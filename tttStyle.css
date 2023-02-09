@@ -22,9 +22,9 @@
     --mark-size: calc(var(--cell-size) * .9);
 }
 
-/* {
+* {
     border: 1px solid orange;
-}*/
+}
 
 body {
     margin: 0;
@@ -35,6 +35,7 @@ body {
 h1 {
     text-align: center;
     letter-spacing: 5px;
+    margin: 0 auto; 
 }
 
 .header {
@@ -222,6 +223,33 @@ h1 {
 .cell:nth-child(8),
 .cell:nth-child(9) {
     border-bottom: none;
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2em;
+    font-family: 'Righteous', cursive;
+}
+#footerP {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    letter-spacing: 2px;
+    color: whitesmoke;
+}
+
+.logoSpan {
+    margin: 5px auto;
+    z-index: -1;
+}
+
+a {
+    color: white;
 }
 
 @media only screen and (max-width: 900px) {
