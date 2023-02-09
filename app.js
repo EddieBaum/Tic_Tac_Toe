@@ -1,5 +1,5 @@
 
-// Wrap every letter in a span
+// Wrap every letter in a span animation header TIC TAC TOE
 var textWrapper = document.querySelector('.ml10 .letters');
 textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
 
@@ -47,12 +47,15 @@ const winningCombos = [
 
 function checkWin(board) {                          //this function checks for 3 marcs in a row each time a player clicks a cell
     for (let combo of winningCombos) {
-        if (board[combo[0]] !== "" && board[combo[0]] === board[combo[1]] && board[combo[1]] === board[combo[2]]) {
-            setTimeout(displayWinningScreen(), 1500);
-            return true;
+      if (board[combo[0]] !== "" && board[combo[0]] === board[combo[1]] && board[combo[1]] === board[combo[2]]) {
+        winningMessageScreen.style.display = 'flex';
+        winDisplayMessage.innerHTML = xoMarc + ' WINS!' 
+        return true;
         }
     } if (board.every(cell => cell !== "")) {
         winningMessageScreen.style.display = 'flex';
+        winDisplayMessage.innerHTML = 'TIE!'; 
+        return true; 
     } else {
         return false;
     }
@@ -74,11 +77,14 @@ function handleHumanMove(e) {
         // place 'X' or 'O' in the cell
         e.target.innerHTML = xoMarc;
         board[e.target.dataset.cell] = xoMarc;
+      checkWin(board);
+      if (!checkWin(board)) {
         xTurn = !xTurn;
         whosTurn();
-        checkWin(board);
-        // after human move, call the function to make AI move
-        handleAIMove();
+      } else {
+        return null; 
+      }
+      handleAIMove();
     }
 }
 
@@ -91,9 +97,11 @@ function handleAIMove() {
     const chosenCell = document.querySelector(`[data-cell="${chosenIndex}"]`);
     chosenCell.innerHTML = xoMarc;
     board[chosenIndex] = xoMarc;
+  checkWin(board);
+  if (!checkWin(board)) {
     xTurn = !xTurn;
     whosTurn();
-    checkWin(board);
+  }
 };
 
 function coinFlip(userChoice) {    //Start game with a coin flip to see who goes first
@@ -112,8 +120,7 @@ function coinFlip(userChoice) {    //Start game with a coin flip to see who goes
 };
   
 function displayWinningScreen() {                   //full screen that displays winner of game or tie
-    winningMessageScreen.style.display = 'flex';
-    winDisplayMessage.innerHTML = xoMarc + ' WINS!'
+  winningMessageScreen.style.display = 'flex';
 };
 
 
