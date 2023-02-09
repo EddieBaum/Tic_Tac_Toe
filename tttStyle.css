@@ -22,9 +22,9 @@
     --mark-size: calc(var(--cell-size) * .9);
 }
 
-* {
+/* {
     border: 1px solid orange;
-}
+}*/
 
 body {
     margin: 0;
