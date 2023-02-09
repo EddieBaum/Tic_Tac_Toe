@@ -107,7 +107,7 @@ h1 {
 }
 
 #heads {
-    background-image: url('file:///Users/edwardbaum/WebDevelopment/JS_games/Tic_Tac_Toe/Screenshot%202023-02-06%20at%202.12.40%20PM.png');
+    background-image: url('https://eddiebaum.github.io/Tic_Tac_Toe/heads.png');
     background-position: center;
     background-size: 101%;
     margin-left: 90px; 
@@ -115,7 +115,7 @@ h1 {
 }
 
 #tails {
-    background-image: url('file:///Users/edwardbaum/WebDevelopment/JS_games/Tic_Tac_Toe/Screenshot%202023-02-06%20at%208.46.33%20AM.png');
+    background-image: url('https://eddiebaum.github.io/Tic_Tac_Toe/tail.png');
     background-position: center;
     background-size: 119%;
     margin-right: 90px;
