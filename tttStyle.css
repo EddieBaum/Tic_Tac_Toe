@@ -9,6 +9,8 @@
 /* font-family: 'Righteous', cursive; */
 
 
+/* https://eddiebaum.github.io/Tic_Tac_Toe/app.js */ 
+
 
 
 *, *::after, *::before {
@@ -115,7 +117,7 @@ h1 {
 }
 
 #tails {
-    background-image: url('https://eddiebaum.github.io/Tic_Tac_Toe/tail.png');
+    background-image: url('https://eddiebaum.github.io/Tic_Tac_Toe/tails.png');
     background-position: center;
     background-size: 119%;
     margin-right: 90px;
